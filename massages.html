@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Notification Demo</title>
+    <link rel="stylesheet" href="css/massages.css">
+</head>
+<body>
+    <div class="phone-screen"></div>
+
+    <div class="status-bar">
+        <div class="time" id="currentTime">9:41</div>
+        <div class="status-icons">
+            <span>📶</span>
+            <span>📡</span>
+            <span>🔋</span>
+        </div>
+    </div>
+
+    <div class="notification-container" id="notification" onclick="openChat()">
+        <div class="ios-notification">
+            <div class="notification-icon">🏛️</div>
+            <div class="notification-content">
+                <div class="notification-header">
+                    <div class="notification-app">Messages</div>
+                    <div class="notification-time">now</div>
+                </div>
+                <div class="notification-title">Gov Services</div>
+                <div class="notification-message">Reminder: Your appointment is scheduled for tomorrow at 2:00 PM. Please arrive 10 minutes early.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-view" id="chatView">
+        <div class="chat-header">
+            <div class="contact-avatar">🏛️</div>
+            <div class="contact-name">Gov Services</div>
+        </div>
+        <div class="chat-messages">
+            <div class="date-divider">December 8</div>
+            
+            <div class="message-bubble received">
+                <div class="bubble-content">Welcome! You've successfully registered for government services notifications.</div>
+                <div class="message-time">10:30 AM</div>
+            </div>
+
+            <div class="date-divider">December 9</div>
+            
+            <div class="message-bubble received">
+                <div class="bubble-content">Your document request has been approved. You can pick it up at our office between 9 AM - 4 PM.</div>
+                <div class="message-time">2:15 PM</div>
+            </div>
+
+            <div class="date-divider">December 10</div>
+            
+            <div class="message-bubble received">
+                <div class="bubble-content">Your appointment has been confirmed for December 12th at 2:00 PM. Location: Main Government Building, Room 305.</div>
+                <div class="message-time">9:00 AM</div>
+            </div>
+
+            <div class="date-divider">Today</div>
+            
+            <div class="message-bubble received">
+                <div class="bubble-content">Reminder: Your appointment is scheduled for tomorrow at 2:00 PM. Please arrive 10 minutes early.</div>
+                <div class="message-time">now</div>
+            </div>
+        </div>
+    </div>
+
+    <button class="trigger-btn" id="triggerBtn" onclick="showNotification()">Show SMS Notification</button>
+<script src="js/massages.js"></script>
+
+</body>
+</html>
