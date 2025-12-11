@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMS Notification Demo</title>
     <link rel="stylesheet" href="css/massages.css">
+    <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <div class="phone-screen"></div>
@@ -20,14 +21,20 @@
 
     <div class="notification-container" id="notification" onclick="openChat()">
         <div class="ios-notification">
-            <div class="notification-icon">🏛️</div>
+            <div class="notification-icon"><img src="assets/icons8-messages.svg"> </div>
             <div class="notification-content">
                 <div class="notification-header">
                     <div class="notification-app">Messages</div>
                     <div class="notification-time">now</div>
                 </div>
-                <div class="notification-title">Gov Services</div>
-                <div class="notification-message">Reminder: Your appointment is scheduled for tomorrow at 2:00 PM. Please arrive 10 minutes early.</div>
+                <div class="notification-title">Absher</div>
+                <div class="notification-message">
+  عزيزي صاحب الهوية رقم 7921**** <br>
+  نود ابلاغك باقتراب موعد الدفعة الشهرية المعتاد تحويلها <br>
+  للنزيل صاحب الهوية 4832***** <br>
+  حرصك على الايداع يضمن استمرار توفير احتياجاته.
+</div>
+
             </div>
         </div>
     </div>
@@ -35,34 +42,55 @@
     <div class="chat-view" id="chatView">
         <div class="chat-header">
             <div class="contact-avatar">🏛️</div>
-            <div class="contact-name">Gov Services</div>
+            <div class="contact-name">ِAbsher</div>
         </div>
         <div class="chat-messages">
             <div class="date-divider">December 8</div>
             
             <div class="message-bubble received">
-                <div class="bubble-content">Welcome! You've successfully registered for government services notifications.</div>
+                <div class="bubble-content">
+                    عزيزي صاحب الهوية رقم 7921**** <br>
+                    نود ابلاغك بان رصيد النزيل صاحب الهوية 4832****<br>
+                    قد انخفض الى اقل من 50 ريال<br>
+                    يمكنك الايجاع في اي وقت لضمان تلبية احتياجاته
+                </div>
                 <div class="message-time">10:30 AM</div>
             </div>
 
             <div class="date-divider">December 9</div>
             
             <div class="message-bubble received">
-                <div class="bubble-content">Your document request has been approved. You can pick it up at our office between 9 AM - 4 PM.</div>
-                <div class="message-time">2:15 PM</div>
+                <div class="bubble-content">
+                    عزيزي صاحب الهوية رقم 7921****<br>
+                    كل عام وأنت بخير <br>
+                    نتمنى لك ولمن تحب اوقاتا سعيدة بمناسبة عيد الفطر المبارك
+                    نذكرك بامكانية ايدان الاموال للنزيل صاحب الهوية <br>4832****<br>
+                    و مشاركته فرحة العيد و ادخال السرور على قلبه
+                </div>
+                <div class="message-time">3:00 AM</div>
             </div>
 
             <div class="date-divider">December 10</div>
             
             <div class="message-bubble received">
-                <div class="bubble-content">Your appointment has been confirmed for December 12th at 2:00 PM. Location: Main Government Building, Room 305.</div>
+                <div class="bubble-content">
+                    عزيزي صاحب الهوية رقم 7921****<br>
+                    كل عام وأنت بخير <br>
+                    نتمنى لك ولمن تحب اوقاتا سعيدة بمناسبة عيد الاضحى <br>المبارك
+                    نذكرك بامكانية ايدان الاموال للنزيل صاحب الهوية 4832****<br>
+                    و مشاركته فرحة العيد و ادخال السرور على قلبه
+                </div>
                 <div class="message-time">9:00 AM</div>
             </div>
 
             <div class="date-divider">Today</div>
             
             <div class="message-bubble received">
-                <div class="bubble-content">Reminder: Your appointment is scheduled for tomorrow at 2:00 PM. Please arrive 10 minutes early.</div>
+                <div class="bubble-content">ع
+  عزيزي صاحب الهوية رقم 7921**** <br>
+  نود ابلاغك باقتراب موعد الدفعة الشهرية المعتاد تحويلها <br>
+  للنزيل صاحب الهوية 4832***** <br>
+  حرصك على الايداع يضمن استمرار توفير احتياجاته.</div>
                 <div class="message-time">now</div>
             </div>
         </div>
