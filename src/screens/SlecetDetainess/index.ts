@@ -1,0 +1,1 @@
+export { SlecetDetainess } from "./SlecetDetainess";
