@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تم الإيداع بنجاح - أبشر</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-right">
+            <button class="menu-icon">☰</button>
+            <div class="header-icons">
+                <button class="icon-btn">🌐</button>
+            </div>
+        </div>
+        <div class="header-left">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 50'%3E%3Ctext x='10' y='35' font-family='Arial' font-size='24' fill='%23666'%3ERiyadh 2030%3C/text%3E%3C/svg%3E" alt="Vision 2030" class="vision-logo">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40'%3E%3Crect width='5' height='40' x='10' fill='%231B7B4C'/%3E%3Crect width='5' height='35' x='20' fill='%231B7B4C'/%3E%3Crect width='5' height='30' x='30' fill='%231B7B4C'/%3E%3Crect width='5' height='25' x='40' fill='%231B7B4C'/%3E%3Crect width='5' height='20' x='50' fill='%231B7B4C'/%3E%3Crect width='5' height='15' x='60' fill='%231B7B4C'/%3E%3C/svg%3E" alt="Absher Logo" class="logo">
+        </div>
+    </div>
+
+    <div class="search-container">
+        <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="اكتب هنا للبحث">
+        </div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-steps">
+            <div class="progress-line"></div>
+            <div class="progress-line-active" style="width: 100%;"></div>
+            
+            <div class="step completed">
+                <span>✓</span>
+            </div>
+            <div class="step completed">
+                <span>✓</span>
+            </div>
+            <div class="step completed">
+                <span>✓</span>
+            </div>
+            <div class="step completed">
+                <span>✓</span>
+            </div>
+            <div class="step completed">
+                <span>✓</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-banner success">
+        تمت العملية بنجاح
+    </div>
+
+    <div class="content">
+        <div class="card" style="text-align: center;">
+            <div class="confirmation-icon">✓</div>
+            
+            <h2 style="font-size: 20px; color: var(--primary-green); margin-bottom: 20px;">
+                تم الإيداع بنجاح
+            </h2>
+
+            <div class="card" style="background-color: var(--background); margin: 20px 0;">
+                <div class="detail-row">
+                    <span class="detail-label">الرقم</span>
+                    <span class="detail-value" id="transactionId">00/00/0000</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">المبلغ الإجمالي</span>
+                    <span class="detail-value" id="confirmationAmount">ر.س 1000.00</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">طريقة الإيداع</span>
+                    <span class="detail-value">فوري</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">الحالة</span>
+                    <span class="detail-value">
+                        <span class="status-badge success">
+                            <span class="status-icon">✓</span>
+                            مكتمل
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" onclick="goToPage('previous-transactions.html')">
+                عرض المعاملات السابقة
+            </button>
+
+            <button class="btn btn-secondary" onclick="goToHomePage()">
+                الصفحة الرئيسية
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        loadConfirmation();
+    </script>
+</body>
+</html>

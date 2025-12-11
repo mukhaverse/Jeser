@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحديد المبلغ - أبشر</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-right">
+            <button class="menu-icon">☰</button>
+            <div class="header-icons">
+                <button class="icon-btn">🌐</button>
+            </div>
+        </div>
+        <div class="header-left">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 50'%3E%3Ctext x='10' y='35' font-family='Arial' font-size='24' fill='%23666'%3ERiyadh 2030%3C/text%3E%3C/svg%3E" alt="Vision 2030" class="vision-logo">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40'%3E%3Crect width='5' height='40' x='10' fill='%231B7B4C'/%3E%3Crect width='5' height='35' x='20' fill='%231B7B4C'/%3E%3Crect width='5' height='30' x='30' fill='%231B7B4C'/%3E%3Crect width='5' height='25' x='40' fill='%231B7B4C'/%3E%3Crect width='5' height='20' x='50' fill='%231B7B4C'/%3E%3Crect width='5' height='15' x='60' fill='%231B7B4C'/%3E%3C/svg%3E" alt="Absher Logo" class="logo">
+        </div>
+    </div>
+
+    <div class="search-container">
+        <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="اكتب هنا للبحث">
+        </div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-steps">
+            <div class="progress-line"></div>
+            <div class="progress-line-active" style="width: 50%;"></div>
+            
+            <div class="step completed">
+                <span>✓</span>
+            </div>
+            <div class="step completed">
+                <span>✓</span>
+            </div>
+            <div class="step active">
+                <span>3</span>
+                <span class="step-label">تحديد المبلغ</span>
+            </div>
+            <div class="step">
+                <span>4</span>
+            </div>
+            <div class="step">
+                <span>5</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-banner success">
+        الحد الأدنى للحوالات هو 2000 ر.س
+    </div>
+
+    <div class="content">
+        <h2 class="page-title">تحديد المبلغ</h2>
+
+        <div class="card">
+            <div class="amount-options">
+                <button class="amount-btn" onclick="selectAmount(500)">ر.س 500</button>
+                <button class="amount-btn" onclick="selectAmount(100)">ر.س 100</button>
+                <button class="amount-btn" onclick="selectAmount(2000)">ر.س 2000</button>
+                <button class="amount-btn" onclick="selectAmount(1500)">ر.س 1500</button>
+                <button class="amount-btn" onclick="selectAmount(1000)">ر.س 1000</button>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">حدد مبلغاً آخر:</label>
+                <input 
+                    type="number" 
+                    id="customAmount" 
+                    class="form-input" 
+                    placeholder="ر.س"
+                    min="100"
+                    oninput="updateCustomAmount()"
+                >
+            </div>
+        </div>
+
+        <button class="btn btn-primary" onclick="proceedToSummary()">
+            التالي
+        </button>
+
+        <button class="btn btn-outline" onclick="goBack()">
+            السابق
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        updateProgress(2);
+    </script>
+</body>
+</html>

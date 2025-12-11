@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدفع - أبشر</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-right">
+            <button class="menu-icon">☰</button>
+            <div class="header-icons">
+                <button class="icon-btn">🌐</button>
+            </div>
+        </div>
+        <div class="header-left">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 50'%3E%3Ctext x='10' y='35' font-family='Arial' font-size='24' fill='%23666'%3ERiyadh 2030%3C/text%3E%3C/svg%3E" alt="Vision 2030" class="vision-logo">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40'%3E%3Crect width='5' height='40' x='10' fill='%231B7B4C'/%3E%3Crect width='5' height='35' x='20' fill='%231B7B4C'/%3E%3Crect width='5' height='30' x='30' fill='%231B7B4C'/%3E%3Crect width='5' height='25' x='40' fill='%231B7B4C'/%3E%3Crect width='5' height='20' x='50' fill='%231B7B4C'/%3E%3Crect width='5' height='15' x='60' fill='%231B7B4C'/%3E%3C/svg%3E" alt="Absher Logo" class="logo">
+        </div>
+    </div>
+
+    <div class="search-container">
+        <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="اكتب هنا للبحث">
+        </div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-steps">
+            <div class="progress-line"></div>
+            <div class="progress-line-active" style="width: 100%;"></div>
+            
+            <div class="step completed">
+                <span>✓</span>
+            </div>
+            <div class="step completed">
+                <span>✓</span>
+            </div>
+            <div class="step completed">
+                <span>✓</span>
+            </div>
+            <div class="step completed">
+                <span>✓</span>
+            </div>
+            <div class="step active">
+                <span>5</span>
+                <span class="step-label">الدفع</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2 class="page-title">خيارات الدفع</h2>
+
+        <!-- Apple Pay Option -->
+        <div class="payment-option" id="applePay" onclick="togglePaymentOption('applePay')">
+            <div class="payment-header">
+                <span class="payment-title">الدفع عبر Apple Pay</span>
+                <span>▼</span>
+            </div>
+            <div class="payment-details" style="display: none;">
+                <div class="detail-row">
+                    <span class="detail-label">المبلغ الإجمالي</span>
+                    <span class="detail-value">ر.س 3000.00</span>
+                </div>
+                <button class="btn btn-primary" style="background-color: #000; margin-top: 15px;" onclick="processPayment()">
+                     Pay الدفع باستخدام
+                </button>
+            </div>
+        </div>
+
+        <!-- Bank Card Option -->
+        <div class="payment-option" id="bankCard" onclick="togglePaymentOption('bankCard')">
+            <div class="payment-header">
+                <span class="payment-title">الدفع عبر البطاقة البنكية</span>
+                <span>▼</span>
+            </div>
+            <div class="payment-details" style="display: none;">
+                <div class="form-group">
+                    <label class="form-label required">رقم البطاقة</label>
+                    <input type="text" class="form-input" placeholder="ال 16 رقماً المدونة على بطاقتك" maxlength="16">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label required">الاسم على البطاقة</label>
+                    <input type="text" class="form-input" placeholder="اسمك المدون على بطاقتك">
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label class="form-label required">رمز الأمان</label>
+                        <input type="text" class="form-input" placeholder="ال 3 أرقام خلف بطاقتك" maxlength="3">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label required">تاريخ الانتهاء</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" class="form-input" placeholder="MM" maxlength="2" style="width: 50%;">
+                            <input type="text" class="form-input" placeholder="YY" maxlength="2" style="width: 50%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-row total-row" style="margin-top: 15px;">
+                    <span class="detail-label">المبلغ الإجمالي</span>
+                    <span class="detail-value">ر.س 3000.00</span>
+                </div>
+
+                <button class="btn btn-primary" onclick="processPayment()">
+                    إتمام عملية الإيداع
+                </button>
+            </div>
+        </div>
+
+        <div class="payment-icons">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' rx='5' fill='%23FF5F00'/%3E%3Ccircle cx='20' cy='20' r='12' fill='%23EB001B'/%3E%3Ccircle cx='40' cy='20' r='12' fill='%23F79E1B'/%3E%3C/svg%3E" alt="Mastercard" class="payment-icon">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' rx='5' fill='%23009FDF'/%3E%3Ctext x='30' y='25' text-anchor='middle' fill='white' font-size='12' font-weight='bold'%3EMADA%3C/text%3E%3C/svg%3E" alt="Mada" class="payment-icon">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' rx='5' fill='%238B4F9F'/%3E%3Ctext x='30' y='25' text-anchor='middle' fill='white' font-size='10' font-weight='bold'%3ESTC PAY%3C/text%3E%3C/svg%3E" alt="STC Pay" class="payment-icon">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' rx='5' fill='%23000'/%3E%3Ctext x='10' y='25' fill='white' font-size='16' font-weight='bold'%3E🍎 Pay%3C/text%3E%3C/svg%3E" alt="Apple Pay" class="payment-icon">
+        </div>
+
+        <button class="btn btn-outline" onclick="goBack()">
+            السابق
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        updateProgress(4);
+    </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختيار الشهر - أبشر</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-right">
+            <button class="menu-icon">☰</button>
+            <div class="header-icons">
+                <button class="icon-btn">🌐</button>
+            </div>
+        </div>
+        <div class="header-left">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 50'%3E%3Ctext x='10' y='35' font-family='Arial' font-size='24' fill='%23666'%3ERiyadh 2030%3C/text%3E%3C/svg%3E" alt="Vision 2030" class="vision-logo">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40'%3E%3Crect width='5' height='40' x='10' fill='%231B7B4C'/%3E%3Crect width='5' height='35' x='20' fill='%231B7B4C'/%3E%3Crect width='5' height='30' x='30' fill='%231B7B4C'/%3E%3Crect width='5' height='25' x='40' fill='%231B7B4C'/%3E%3Crect width='5' height='20' x='50' fill='%231B7B4C'/%3E%3Crect width='5' height='15' x='60' fill='%231B7B4C'/%3E%3C/svg%3E" alt="Absher Logo" class="logo">
+        </div>
+    </div>
+
+    <div class="search-container">
+        <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="اكتب هنا للبحث">
+        </div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-steps">
+            <div class="progress-line"></div>
+            <div class="progress-line-active" style="width: 50%;"></div>
+            
+            <div class="step completed">
+                <span>✓</span>
+            </div>
+            <div class="step completed">
+                <span>✓</span>
+            </div>
+            <div class="step active">
+                <span>3</span>
+                <span class="step-label">مراجعة الدفعات</span>
+            </div>
+            <div class="step">
+                <span>4</span>
+            </div>
+            <div class="step">
+                <span>5</span>
+            </div>
+            <div class="step">
+                <span>6</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-banner">
+        يرجى اختيار نوع الإيداع السنوية المرسلة
+    </div>
+
+    <div class="info-banner success">
+        الحد الأقصى للحوالات هو 2000 ر.س في الشهر الحد الأقصى المسموح
+    </div>
+
+    <div class="content">
+        <!-- Step 1: Choose Duration -->
+        <div id="step1" class="step-content">
+            <h2 class="page-title">الخيارات</h2>
+
+            <div class="card">
+                <div class="schedule-option" data-months="12" onclick="selectDuration(12, this)">
+                    <div style="display: flex; align-items: center; gap: 15px; padding: 15px; border: 2px solid #E0E0E0; border-radius: 8px; cursor: pointer;">
+                        <span style="font-size: 24px;">📅</span>
+                        <span style="flex: 1; font-size: 14px; font-weight: 600;">جدولة الإيداع للعام الهجري القادم</span>
+                    </div>
+                </div>
+
+                <div class="schedule-option" data-months="3" onclick="selectDuration(3, this)" style="margin-top: 10px;">
+                    <div style="display: flex; align-items: center; gap: 15px; padding: 15px; border: 2px solid #E0E0E0; border-radius: 8px; cursor: pointer;">
+                        <span style="font-size: 24px;">📅</span>
+                        <span style="flex: 1; font-size: 14px; font-weight: 600;">جدولة الإيداع لـ 3 أشهر قادمة</span>
+                    </div>
+                </div>
+
+                <div class="schedule-option" data-months="6" onclick="selectDuration(6, this)" style="margin-top: 10px;">
+                    <div style="display: flex; align-items: center; gap: 15px; padding: 15px; border: 2px solid #E0E0E0; border-radius: 8px; cursor: pointer;">
+                        <span style="font-size: 24px;">📅</span>
+                        <span style="flex: 1; font-size: 14px; font-weight: 600;">جدولة الإيداع لـ 6 أشهر قادمة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Choose Amount (Hidden initially) -->
+        <div id="step2" class="step-content" style="display: none;">
+            <h3 style="font-size: 16px; font-weight: bold; margin: 20px 0 10px;">عدد الدفعات</h3>
+
+            <div class="card">
+                <div class="amount-options" style="grid-template-columns: repeat(5, 1fr);">
+                    <button class="amount-btn" onclick="selectRecurringAmount(500)">ر.س 500</button>
+                    <button class="amount-btn" onclick="selectRecurringAmount(100)">ر.س 100</button>
+                    <button class="amount-btn" onclick="selectRecurringAmount(2000)">ر.س 2000</button>
+                    <button class="amount-btn" onclick="selectRecurringAmount(1800)">ر.س 1800</button>
+                    <button class="amount-btn" onclick="selectRecurringAmount(1600)">ر.س 1600</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: Choose Dates (Hidden initially) -->
+        <div id="step3" class="step-content" style="display: none;">
+            <h3 style="font-size: 16px; font-weight: bold; margin: 20px 0 10px;">اختيار التواريخ</h3>
+
+            <div class="card">
+                <div class="calendar" style="margin: 20px 0;">
+                    <div class="calendar-header">
+                        <button class="calendar-nav" onclick="changeMonth(-1)">→</button>
+                        <span class="calendar-month" id="currentMonth">ديسمبر 2025</span>
+                        <button class="calendar-nav" onclick="changeMonth(1)">←</button>
+                    </div>
+                    <div id="calendar"></div>
+                </div>
+
+                <div style="background-color: var(--background); padding: 15px; border-radius: 8px; margin-top: 15px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span style="font-size: 13px; color: var(--text-light);">من</span>
+                        <span style="font-size: 13px; font-weight: 600;" id="startDate">10/12/1447</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-size: 13px; color: var(--text-light);">الى</span>
+                        <span style="font-size: 13px; font-weight: 600;" id="endDate">10/12/1447</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" id="nextBtn" onclick="proceedToNext()" style="display: none;">
+            التالي
+        </button>
+
+        <button class="btn btn-outline" onclick="goBack()">
+            السابق
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize the page
+        updateProgress(2);
+        
+        // Initialize month display
+        const months = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
+        document.getElementById('currentMonth').textContent = `${months[recurringState.currentCalendarMonth]} ${recurringState.currentCalendarYear}`;
+    </script>
+</body>
+</html>
