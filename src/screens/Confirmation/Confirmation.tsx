@@ -3,173 +3,189 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@animaapp/playground-react-sdk";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
+import { SearchIcon } from "lucide-react";
+import { Header } from "../../components/shared/Header";
 
 export const Confirmation = (): JSX.Element => {
   const [totalAmount, setTotalAmount] = useState(0);
-  const [depositCount, setDepositCount] = useState(0);
+  const [transactionId, setTransactionId] = useState("");
 
-  // Fetch completed date amounts
+  // Fetch the most recent completed date amount
   const { data: completedAmounts, isPending } = useQuery("DateAmount", {
     where: { status: "completed" },
     orderBy: { createdAt: "desc" },
-    limit: 10
+    limit: 1
   });
 
   useEffect(() => {
     if (completedAmounts && completedAmounts.length > 0) {
-      const total = completedAmounts.reduce((sum, item) => sum + item.amount, 0);
-      setTotalAmount(total);
-      setDepositCount(completedAmounts.length);
+      const latestDeposit = completedAmounts[0];
+      setTotalAmount(latestDeposit.amount);
+      setTransactionId(latestDeposit.transactionId || "");
     }
   }, [completedAmounts]);
+
   return (
     <div className="bg-white w-full min-w-[844px] min-h-screen relative flex flex-col">
-      <header className="w-full px-[42px] pt-[62px] pb-8 translate-y-[-1rem] animate-fade-in opacity-0">
-        <nav className="flex items-center justify-between max-w-[760px]">
-          <button
-            className="flex flex-col gap-4 w-[54px] h-[39px] transition-opacity hover:opacity-70"
-            aria-label="Menu"
-          >
-            <div className="w-full h-[7px] bg-[#00834d] rounded-[10px]" />
-            <div className="w-full h-[7px] bg-[#00834d] rounded-[10px]" />
-            <div className="w-full h-[7px] bg-[#00834d] rounded-[10px]" />
-          </button>
+      <Header />
 
-          <div className="flex items-center gap-6 flex-1 justify-center">
-            <Card className="relative w-32 h-[129px] bg-white rounded-[10px] border border-[#676767] transition-transform hover:scale-105 cursor-pointer">
-              <div className="absolute top-[13px] left-[39px] w-[34px] h-[38px]">
-                <img
-                  alt="English flag"
-                  src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-5-8.png"
-                  className="w-full h-full object-contain"
-                />
+      {/* Search Bar */}
+      <div className="w-full px-8 mb-8 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
+        <div className="max-w-[800px] mx-auto relative">
+          <input
+            type="text"
+            placeholder="أكتب هنا للبحث"
+            className="w-full h-16 rounded-[10px] border border-[#67676752] text-right [direction:rtl] pr-16 pl-16 text-xl [font-family:'Inter',Helvetica] text-[#6767677a]"
+          />
+          <SearchIcon className="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-[#676767]" />
+        </div>
+      </div>
+
+      <main className="flex-1 px-8 pb-8 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
+        <div className="max-w-[800px] mx-auto">
+          {/* Progress Indicator - All Steps Completed */}
+          <div className="flex items-center justify-center gap-0 mb-8">
+            <div className="flex items-center gap-0">
+              <div className="inline-flex w-[50px] h-[50px] items-center justify-center rounded-[50px] border-[3px] border-solid bg-[#00834d] border-[#00834d]">
+                <span className="[font-family:'Inter',Helvetica] font-semibold text-lg text-white">
+                  5
+                </span>
               </div>
-
-              <div className="absolute top-[17px] left-[83px] font-normal text-[#00834d] text-2xl leading-normal">
-                E
+              <img
+                className="w-[76px] h-1"
+                alt="Divider"
+                src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/divider-2.svg"
+              />
+              <div className="inline-flex w-[50px] h-[50px] items-center justify-center rounded-[50px] border-[3px] border-solid bg-[#00834d] border-[#00834d]">
+                <span className="[font-family:'Inter',Helvetica] font-semibold text-lg text-white">
+                  4
+                </span>
               </div>
-
-              <div className="absolute top-[47px] left-[55px] w-[34px] h-[37px]">
-                <img
-                  alt="Arabic flag"
-                  src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-4-8.png"
-                  className="w-full h-full object-contain"
-                />
+              <img
+                className="w-[76px] h-1"
+                alt="Divider"
+                src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/divider-2.svg"
+              />
+              <div className="inline-flex w-[50px] h-[50px] items-center justify-center rounded-[50px] border-[3px] border-solid bg-[#00834d] border-[#00834d]">
+                <span className="[font-family:'Inter',Helvetica] font-semibold text-lg text-white">
+                  3
+                </span>
               </div>
-
-              <div className="absolute top-[38px] left-8 w-8 [font-family:'Jaldi',Helvetica] font-normal text-[#00834d] text-2xl text-left [direction:rtl] leading-normal">
-                ع
+              <img
+                className="w-[76px] h-1"
+                alt="Divider"
+                src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/divider-2.svg"
+              />
+              <div className="inline-flex w-[50px] h-[50px] items-center justify-center rounded-[50px] border-[3px] border-solid bg-[#00834d] border-[#00834d]">
+                <span className="[font-family:'Inter',Helvetica] font-semibold text-lg text-white">
+                  2
+                </span>
               </div>
-
-              <div className="absolute top-[95px] left-[26px] w-[87px] [font-family:'Inter',Helvetica] font-bold text-[#676767] text-2xl leading-normal">
-                English
+              <img
+                className="w-[76px] h-1"
+                alt="Divider"
+                src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/divider-2.svg"
+              />
+              <div className="inline-flex w-[50px] h-[50px] items-center justify-center rounded-[50px] border-[3px] border-solid bg-[#00834d] border-[#00834d]">
+                <span className="[font-family:'Inter',Helvetica] font-semibold text-lg text-white">
+                  1
+                </span>
               </div>
-            </Card>
-
-            <div className="w-px h-[90px] bg-[#676767]" />
-
-            <img
-              className="w-[124px] h-[83px] object-cover"
-              alt="Saudi vision 2030 logo"
-              src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/saudi-vision-2030-logo-svg-1-8.png"
-            />
+            </div>
           </div>
 
-          <div className="w-[59px] h-[96px] flex items-center justify-center">
-            <img
-              className="w-full h-full object-contain"
-              alt="UserIcon profile"
-              src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-15.png"
-            />
-          </div>
-        </nav>
-      </header>
-
-      <main className="flex-1 flex flex-col items-center justify-center px-8 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
-        <Card className="w-full max-w-[600px] bg-white rounded-[30px] border-4 border-[#f7f7f7] shadow-lg">
-          <CardContent className="flex flex-col items-center p-12">
-            <div className="w-32 h-32 bg-[#00834d] rounded-full flex items-center justify-center mb-8">
-              <svg
-                className="w-16 h-16 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={3}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
+          <Card className="w-full bg-white rounded-[30px] border-4 border-[#f7f7f7]">
+            <div className="w-full h-[68px] bg-[#d9edf6] rounded-t-[30px] flex items-center justify-center">
+              <h2 className="[font-family:'Inter',Helvetica] font-bold text-[#494848] text-2xl whitespace-nowrap [direction:rtl]">
+                تمت العملية بنجاح
+              </h2>
             </div>
 
-            <h1 className="[font-family:'Inter',Helvetica] font-bold text-[#00834d] text-4xl text-center mb-4 [direction:rtl]">
-              تم بنجاح
-            </h1>
+            <CardContent className="p-8">
+              {isPending ? (
+                <div className="text-center py-12">
+                  <p className="[font-family:'Inter',Helvetica] font-normal text-[#494848] text-xl [direction:rtl]">
+                    جاري التحميل...
+                  </p>
+                </div>
+              ) : (
+                <>
+                  {/* Transaction Details */}
+                  <div className="space-y-6 mb-8">
+                    <div className="flex items-center justify-between py-4 border-b border-[#e0e0e0]">
+                      <span className="[font-family:'Inter',Helvetica] font-normal text-[#494848] text-xl">
+                        {transactionId || "0000000000"}
+                      </span>
+                      <span className="[font-family:'Inter',Helvetica] font-bold text-[#494848] text-xl [direction:rtl]">
+                        الفاتورة رقم
+                      </span>
+                    </div>
 
-            <p className="[font-family:'Inter',Helvetica] font-normal text-[#494848] text-2xl text-center mb-8 [direction:rtl]">
-              {isPending ? "جاري التحميل..." : `تم إيداع مبلغ ${totalAmount.toFixed(2)} ريال بنجاح`}
-            </p>
+                    <div className="flex items-center justify-between py-4 border-b border-[#e0e0e0]">
+                      <span className="[font-family:'Inter',Helvetica] font-normal text-[#494848] text-xl">
+                        {totalAmount.toFixed(2)} ر.س
+                      </span>
+                      <span className="[font-family:'Inter',Helvetica] font-bold text-[#494848] text-xl [direction:rtl]">
+                        المبلغ الإجمالي
+                      </span>
+                    </div>
 
-            <div className="w-full bg-[#f7f7f7] rounded-[15px] p-6 mb-8">
-              <div className="flex items-center justify-between mb-4">
-                <span className="[font-family:'Inter',Helvetica] font-normal text-[#494848] text-xl">
-                  {isPending ? "..." : totalAmount.toFixed(2)}
-                </span>
-                <span className="[font-family:'Inter',Helvetica] font-bold text-[#494848] text-xl [direction:rtl]">
-                  المبلغ المودع
-                </span>
-              </div>
-              <div className="flex items-center justify-between mb-4">
-                <span className="[font-family:'Inter',Helvetica] font-normal text-[#494848] text-xl">
-                  {completedAmounts?.[0]?.recipientName || "احمد بن محمد"}
-                </span>
-                <span className="[font-family:'Inter',Helvetica] font-bold text-[#494848] text-xl [direction:rtl]">
-                  اسم النزيل
-                </span>
-              </div>
-              <div className="flex items-center justify-between mb-4">
-                <span className="[font-family:'Inter',Helvetica] font-normal text-[#494848] text-xl">
-                  {new Date().toLocaleDateString('ar-SA')}
-                </span>
-                <span className="[font-family:'Inter',Helvetica] font-bold text-[#494848] text-xl [direction:rtl]">
-                  تاريخ الإيداع
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="[font-family:'Inter',Helvetica] font-normal text-[#494848] text-xl">
-                  {depositCount}
-                </span>
-                <span className="[font-family:'Inter',Helvetica] font-bold text-[#494848] text-xl [direction:rtl]">
-                  عدد الإيداعات المجدولة
-                </span>
-              </div>
-            </div>
+                    <div className="flex items-center justify-between py-4 border-b border-[#e0e0e0]">
+                      <span className="[font-family:'Inter',Helvetica] font-normal text-[#494848] text-xl [direction:rtl]">
+                        طريقة الإيداع
+                      </span>
+                      <span className="[font-family:'Inter',Helvetica] font-bold text-[#494848] text-xl [direction:rtl]">
+                        فوري
+                      </span>
+                    </div>
 
-            <div className="flex flex-col gap-4 w-full">
-              <Button
-                asChild
-                className="w-full h-16 bg-[#00834d] hover:bg-[#006b3f] rounded-[5px] transition-colors"
-              >
-                <Link to="/home-page">
-                  <span className="[font-family:'Inter',Helvetica] font-semibold text-white text-2xl [direction:rtl]">
-                    العودة للرئيسية
-                  </span>
-                </Link>
-              </Button>
+                    <div className="flex items-center justify-between py-4">
+                      <div className="flex items-center gap-2">
+                        <div className="w-5 h-5 rounded-full bg-[#00834d] flex items-center justify-center">
+                          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="[font-family:'Inter',Helvetica] font-normal text-[#00834d] text-xl [direction:rtl]">
+                          مكتمل
+                        </span>
+                      </div>
+                      <span className="[font-family:'Inter',Helvetica] font-bold text-[#494848] text-xl [direction:rtl]">
+                        الحالة
+                      </span>
+                    </div>
+                  </div>
 
-              <Button
-                variant="outline"
-                className="w-full h-16 rounded-[5px] border-[3px] border-[#00834d] bg-white hover:bg-gray-50 transition-colors"
-              >
-                <span className="[font-family:'Inter',Helvetica] font-semibold text-[#00834d] text-2xl [direction:rtl]">
-                  طباعة الإيصال
-                </span>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+                  {/* Action Buttons */}
+                  <div className="flex flex-col gap-4">
+                    <Button
+                      asChild
+                      className="w-full h-16 bg-[#00834d] hover:bg-[#006b3f] rounded-[5px] transition-colors"
+                    >
+                      <Link to="/history">
+                        <span className="[font-family:'Inter',Helvetica] font-semibold text-white text-2xl [direction:rtl]">
+                          عرض العمليات السابقة
+                        </span>
+                      </Link>
+                    </Button>
+
+                    <Button
+                      variant="outline"
+                      asChild
+                      className="w-full h-16 rounded-[5px] border-[3px] border-[#00834d] bg-white hover:bg-gray-50 transition-colors"
+                    >
+                      <Link to="/home-page">
+                        <span className="[font-family:'Inter',Helvetica] font-semibold text-[#00834d] text-2xl [direction:rtl]">
+                          الصفحة الرئيسية
+                        </span>
+                      </Link>
+                    </Button>
+                  </div>
+                </>
+              )}
+            </CardContent>
+          </Card>
+        </div>
       </main>
     </div>
   );

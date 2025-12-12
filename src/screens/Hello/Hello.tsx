@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 
@@ -117,12 +118,15 @@ export const Hello = (): JSX.Element => {
             </div>
 
             <Button
+              asChild
               className="w-[702px] h-20 mt-[162px] mb-[79px] bg-[#0d8f44] hover:bg-[#0b7a3a] rounded-[5px] transition-colors"
               size="lg"
             >
-              <span className="[font-family:'Inter',Helvetica] font-semibold text-white text-[32px] tracking-[0] leading-[normal] [direction:rtl]">
-                اذهب لخدمة الدعم المالي
-              </span>
+              <Link to="/slecet-detainess">
+                <span className="[font-family:'Inter',Helvetica] font-semibold text-white text-[32px] tracking-[0] leading-[normal] [direction:rtl]">
+                  اذهب لخدمة الدعم المالي
+                </span>
+              </Link>
             </Button>
           </CardContent>
         </Card>

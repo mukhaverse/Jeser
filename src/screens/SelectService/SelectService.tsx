@@ -1,9 +1,10 @@
-import { MenuIcon, SearchIcon } from "lucide-react";
+import { SearchIcon } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
+import { Header } from "../../components/shared/Header";
 
 const progressSteps = [
   { number: 5, active: false, completed: false },
@@ -19,47 +20,7 @@ export const SelectService = (): JSX.Element => {
       className="bg-white overflow-hidden w-full min-w-[844px] min-h-screen relative flex flex-col"
       data-model-id="30:86"
     >
-      <header className="w-full px-[42px] py-10 flex items-center justify-between">
-        <MenuIcon className="w-[54px] h-[39px] text-[#00834d] cursor-pointer" />
-
-        <div className="flex items-center gap-4">
-          <img
-            className="w-[124px] h-[83px] object-cover"
-            alt="Saudi vision"
-            src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/saudi-vision-2030-logo-svg-1-8.png"
-          />
-
-          <div className="w-px h-[90px] bg-[#676767]" />
-
-          <div className="relative w-32 h-[129px] bg-white rounded-[10px] border border-solid border-[#676767] flex flex-col items-center justify-center cursor-pointer">
-            <div className="absolute top-[17px] left-[83px] [font-family:'Inter',Helvetica] font-normal text-[#00834d] text-2xl">
-              E
-            </div>
-            <div className="absolute top-[38px] left-8 [font-family:'Jaldi',Helvetica] font-normal text-[#00834d] text-2xl [direction:rtl]">
-              ع
-            </div>
-            <div className="absolute top-[95px] left-[26px] [font-family:'Inter',Helvetica] font-bold text-[#676767] text-2xl">
-              English
-            </div>
-            <img
-              className="absolute top-[47px] left-[55px] w-[34px] h-[37px]"
-              alt="Group"
-              src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-4-6.png"
-            />
-            <img
-              className="absolute top-[13px] left-[39px] w-[34px] h-[38px]"
-              alt="Group"
-              src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-5-6.png"
-            />
-          </div>
-        </div>
-
-        <img
-          className="w-[59px] h-[92px]"
-          alt="Group"
-          src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-13.png"
-        />
-      </header>
+      <Header />
 
       <div className="w-full px-[34px] mt-10">
         <div className="relative w-full max-w-[765px] mx-auto">
@@ -142,7 +103,7 @@ export const SelectService = (): JSX.Element => {
                   asChild
                   className="w-full h-20 bg-[#00834d] hover:bg-[#006b3f] rounded-[5px] [font-family:'Inter',Helvetica] font-semibold text-white text-3xl [direction:rtl]"
                 >
-                  <Link to="/slecet-detainess">إيداع فوري</Link>
+                  <Link to="/one-time-transaction">إيداع فوري</Link>
                 </Button>
 
                 <Button
@@ -165,7 +126,7 @@ export const SelectService = (): JSX.Element => {
                 asChild
                 className="w-full h-20 bg-white hover:bg-gray-50 rounded-[5px] border-[5px] border-solid border-[#00834d] [font-family:'Inter',Helvetica] font-semibold text-[#00834d] text-3xl [direction:rtl] mb-6"
               >
-                <Link to="/sections">السابق</Link>
+                <Link to="/slecet-detainess">السابق</Link>
               </Button>
             </div>
           </CardContent>

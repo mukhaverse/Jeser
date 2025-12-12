@@ -35,36 +35,37 @@ const depositInfo = [
 export const FormSection = (): JSX.Element => {
   return (
     <section className="w-full flex flex-col bg-white">
-      <div className="w-full max-w-[599px] mx-auto mt-7 flex items-start justify-center">
-        <div className="flex items-start gap-0 mt-5">
+      <div className="w-full max-w-[599px] mx-auto mt-7 flex items-center justify-center">
+        <div className="flex items-center gap-0">
+          <div className="inline-flex items-center justify-center gap-2.5 p-[13px] bg-[#dadada] rounded-[50px] border-[3px] border-solid border-[#dadada]">
+            <div className="w-6 h-6 flex items-center justify-center [font-family:'Inter',Helvetica] font-semibold text-[#000000b2] text-lg">
+              5
+            </div>
+          </div>
+
+          <img
+            className="w-[76px] h-px"
+            alt="Divider"
+            src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/divider-2.svg"
+          />
+
           <div className="flex flex-col items-center gap-2">
-            <div className="flex items-center gap-0">
-              <div className="inline-flex items-center justify-center gap-2.5 p-[13px] bg-[#dadada] rounded-[50px] border-[3px] border-solid border-[#dadada]">
-                <div className="w-6 h-6 flex items-center justify-center [font-family:'Inter',Helvetica] font-semibold text-[#000000b2] text-lg">
-                  5
-                </div>
-              </div>
-
-              <img
-                className="w-[76px] h-px"
-                alt="Divider"
-                src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/divider-2.svg"
-              />
-
-              <div className="inline-flex items-center justify-center gap-2.5 p-[13px] bg-white border-[#00834d] rounded-[50px] border-[3px] border-solid">
-                <div className="w-6 h-6 flex items-center justify-center [font-family:'Inter',Helvetica] font-semibold text-[#000000b2] text-lg">
-                  4
-                </div>
+            <div className="inline-flex items-center justify-center gap-2.5 p-[13px] bg-white border-[#00834d] rounded-[50px] border-[3px] border-solid">
+              <div className="w-6 h-6 flex items-center justify-center [font-family:'Inter',Helvetica] font-semibold text-[#000000b2] text-lg">
+                4
               </div>
             </div>
-
             <div className="[font-family:'Inter',Helvetica] font-light text-black text-xl text-center whitespace-nowrap [direction:rtl]">
               تاكيد المعلومات
             </div>
           </div>
-        </div>
 
-        <div className="flex items-center gap-0 mt-5">
+          <img
+            className="w-[76px] h-px"
+            alt="Divider"
+            src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/divider-2.svg"
+          />
+
           <div className="inline-flex items-center justify-center gap-2.5 p-[13px] bg-[#00834d] rounded-[50px] border-[3px] border-solid border-[#00834d]">
             <div className="w-6 h-6 flex items-center justify-center [font-family:'Inter',Helvetica] font-semibold text-white text-lg">
               3
@@ -212,7 +213,7 @@ export const FormSection = (): JSX.Element => {
           asChild
           className="w-full h-20 bg-[#00834d] hover:bg-[#006b3f] rounded-[5px] transition-colors"
         >
-          <Link to="/pay-page">
+          <Link to="/pay-page-1">
             <span className="[font-family:'Inter',Helvetica] font-semibold text-white text-3xl whitespace-nowrap [direction:rtl]">
               تأكيد المعلومات والذهاب للدفع
             </span>

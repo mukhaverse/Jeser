@@ -1,9 +1,10 @@
-import { MenuIcon, SearchIcon } from "lucide-react";
+import { SearchIcon } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
+import { Header } from "../../components/shared/Header";
 
 const serviceItems = [
   {
@@ -55,58 +56,7 @@ export const ServicesPage = (): JSX.Element => {
       className="bg-white w-full min-w-[320px] min-h-screen flex flex-col opacity-0 translate-y-[-1rem] animate-fade-in"
       data-model-id="30:94"
     >
-      <header className="w-full px-[35px] py-[42px] flex items-center justify-between gap-4 opacity-0 translate-y-[-1rem] animate-fade-in [--animation-delay:200ms]">
-        <Button variant="ghost" size="icon" className="h-auto p-0">
-          <MenuIcon
-            className="w-[54px] h-[39px] text-[#00834d]"
-            strokeWidth={3}
-          />
-        </Button>
-
-        <div className="flex items-center gap-4">
-          <img
-            className="w-[59px] h-[86px] object-contain"
-            alt="Group"
-            src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-12.png"
-          />
-
-          <div className="w-px h-[90px] bg-gray-300" />
-
-          <img
-            className="w-[124px] h-[83px] object-contain"
-            alt="Saudi vision"
-            src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/saudi-vision-2030-logo-svg-1-8.png"
-          />
-
-          <Card className="w-32 h-[129px] rounded-[10px] border-[#676767]">
-            <CardContent className="p-0 h-full flex flex-col items-center justify-between py-[17px]">
-              <div className="flex items-center gap-2">
-                <img
-                  className="w-[34px] h-[38px]"
-                  alt="Group"
-                  src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-5-5.png"
-                />
-                <span className="[font-family:'Inter',Helvetica] font-normal text-[#00834d] text-2xl">
-                  E
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <img
-                  className="w-[34px] h-[37px]"
-                  alt="Group"
-                  src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-4-5.png"
-                />
-                <span className="[font-family:'Jaldi',Helvetica] font-normal text-[#00834d] text-2xl [direction:rtl]">
-                  ع
-                </span>
-              </div>
-              <span className="[font-family:'Inter',Helvetica] font-bold text-[#676767] text-2xl">
-                English
-              </span>
-            </CardContent>
-          </Card>
-        </div>
-      </header>
+      <Header />
 
       <main className="flex-1 px-[35px] pb-8 flex flex-col gap-8">
         <div className="relative w-full max-w-[765px] mx-auto opacity-0 translate-y-[-1rem] animate-fade-in [--animation-delay:400ms]">

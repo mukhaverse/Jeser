@@ -6,6 +6,7 @@ import { Alert, AlertDescription } from "../../components/ui/alert";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
+import { Header } from "../../components/shared/Header";
 
 export const OneTimeTransaction = (): JSX.Element => {
   const navigate = useNavigate();
@@ -74,7 +75,7 @@ export const OneTimeTransaction = (): JSX.Element => {
         notes: "إيداع فوري"
       });
 
-      navigate("/pay-page-1");
+      navigate("/summary-page");
     } catch (err) {
       console.error("Failed to create deposit:", err);
     }
@@ -85,77 +86,82 @@ export const OneTimeTransaction = (): JSX.Element => {
       className="bg-white overflow-hidden w-full min-w-[844px] min-h-screen relative"
       data-model-id="88:67"
     >
-      <header className="relative w-full px-[42px] pt-[62px] pb-8">
-        <div className="flex items-center justify-between max-w-[760px]">
-          <button
-            className="flex flex-col gap-4 w-[54px] h-[39px]"
-            aria-label="Menu"
-          >
-            <div className="w-full h-[7px] bg-[#00854c] rounded-[10px]" />
-            <div className="w-full h-[7px] bg-[#00854c] rounded-[10px]" />
-            <div className="w-full h-[7px] bg-[#00854c] rounded-[10px]" />
-          </button>
-
-          <Card className="w-32 h-[129px] border-[#676767] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
-            <CardContent className="p-0 relative h-full">
-              <div className="absolute top-[13px] left-[39px] w-[34px] h-[38px]">
-                <img
-                  alt="English icon"
-                  src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-5-3.png"
-                />
-              </div>
-              <div className="absolute top-[17px] left-[83px] [font-family:'Inter',Helvetica] font-normal text-[#0b8051] text-2xl">
-                E
-              </div>
-              <div className="absolute top-[47px] left-[55px] w-[34px] h-[37px]">
-                <img
-                  alt="Arabic icon"
-                  src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-4-3.png"
-                />
-              </div>
-              <div className="absolute top-[38px] left-8 [font-family:'Jaldi',Helvetica] font-normal text-[#00834d] text-2xl [direction:rtl]">
-                ع
-              </div>
-              <div className="absolute top-[95px] left-[26px] [font-family:'Inter',Helvetica] font-bold text-[#676767] text-2xl">
-                English
-              </div>
-            </CardContent>
-          </Card>
-
-          <img
-            className="w-[124px] h-[83px] object-cover translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]"
-            alt="Saudi vision 2030 logo"
-            src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/saudi-vision-2030-logo-svg-1-8.png"
-          />
-
-          <div className="w-px h-[90px] bg-[#676767] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]" />
-
-          <img
-            className="w-[59px] h-[77px] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:800ms]"
-            alt="Logo"
-            src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-3.png"
-          />
-        </div>
-      </header>
+      <Header />
 
       <main className="relative w-full px-[27px] pb-[240px]">
         <div className="max-w-[795px] mx-auto translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:1000ms]">
-          <Alert className="mb-[68px] bg-[#d9edf6] border-0">
-            <AlertDescription className="flex items-center justify-end gap-4 text-[#386a7e] text-2xl [font-family:'Inter',Helvetica] [direction:rtl]">
+          {/* Progress Indicator */}
+          <div className="flex items-center justify-center gap-0 mb-8">
+            <div className="flex items-center gap-0">
+              <div className="inline-flex w-[50px] h-[50px] items-center justify-center rounded-[50px] border-[3px] border-solid bg-[#dadada] border-[#dadada]">
+                <span className="[font-family:'Inter',Helvetica] font-semibold text-lg text-[#000000b2]">
+                  5
+                </span>
+              </div>
+              <img
+                className="w-[76px] h-1"
+                alt="Divider"
+                src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/divider-2.svg"
+              />
+              <div className="inline-flex w-[50px] h-[50px] items-center justify-center rounded-[50px] border-[3px] border-solid bg-[#dadada] border-[#dadada]">
+                <span className="[font-family:'Inter',Helvetica] font-semibold text-lg text-[#000000b2]">
+                  4
+                </span>
+              </div>
+              <img
+                className="w-[76px] h-1"
+                alt="Divider"
+                src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/divider-2.svg"
+              />
+              <div className="flex flex-col items-center gap-2">
+                <div className="inline-flex w-[50px] h-[50px] items-center justify-center rounded-[50px] border-[3px] border-solid bg-[#00834d] border-[#00834d]">
+                  <span className="[font-family:'Inter',Helvetica] font-semibold text-lg text-white">
+                    3
+                  </span>
+                </div>
+                <span className="[font-family:'Inter',Helvetica] font-light text-black text-xl text-center whitespace-nowrap [direction:rtl]">
+                  تحديد المبلغ
+                </span>
+              </div>
+              <img
+                className="w-[76px] h-1"
+                alt="Divider"
+                src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/divider-2.svg"
+              />
+              <div className="inline-flex w-[50px] h-[50px] items-center justify-center rounded-[50px] border-[3px] border-solid bg-[#00834d] border-[#00834d]">
+                <span className="[font-family:'Inter',Helvetica] font-semibold text-lg text-white">
+                  2
+                </span>
+              </div>
+              <img
+                className="w-[76px] h-1"
+                alt="Divider"
+                src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/divider-2.svg"
+              />
+              <div className="inline-flex w-[50px] h-[50px] items-center justify-center rounded-[50px] border-[3px] border-solid bg-[#00834d] border-[#00834d]">
+                <span className="[font-family:'Inter',Helvetica] font-semibold text-lg text-white">
+                  1
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <Alert className="mb-8 bg-[#d9edf6] border-0 rounded-[10px]">
+            <AlertDescription className="flex items-center justify-end gap-4 text-[#386a7e] text-xl [font-family:'Inter',Helvetica] [direction:rtl] py-2">
               <span>الحد الاعلى للحوالات هو 2000</span>
               <InfoIcon className="w-5 h-5" />
             </AlertDescription>
           </Alert>
 
-          <Card className="border-4 border-[#f1f1f1]">
+          <Card className="border-4 border-[#f7f7f7] rounded-[30px]">
             <CardContent className="p-0">
-              <div className="bg-[#f7f7f7] h-[68px] flex items-center justify-end px-[51px]">
-                <h1 className="[font-family:'Inter',Helvetica] font-bold text-[#494848] text-3xl [direction:rtl]">
+              <div className="bg-[#f7f7f7] h-[68px] flex items-center justify-center rounded-t-[30px]">
+                <h1 className="[font-family:'Inter',Helvetica] font-bold text-[#494848] text-2xl [direction:rtl]">
                   تحديد المبلغ
                 </h1>
               </div>
 
-              <div className="p-[22px_37px_26px]">
+              <div className="p-8">
                 {isLoadingOptions ? (
                   <div className="text-center py-12">
                     <p className="[font-family:'Inter',Helvetica] font-normal text-[#494848] text-xl [direction:rtl]">
@@ -164,37 +170,117 @@ export const OneTimeTransaction = (): JSX.Element => {
                   </div>
                 ) : (
                   <>
-                    <div className="grid grid-cols-3 gap-x-[60px] gap-y-[40px] mb-[22px]">
-                      {amountOptions?.map((option) => (
-                        <Button
-                          key={option.id}
-                          onClick={() => {
-                            setSelectedAmount(option.value);
-                            setCustomAmount("");
-                          }}
-                          variant="outline"
-                          className={`h-[62px] rounded-[30px] border-[3px] transition-colors flex items-center justify-center gap-[21px] px-[25px] py-2 ${
-                            selectedAmount === option.value && customAmount === ""
-                              ? "border-[#0e9346] bg-[#0e9346] text-white"
-                              : "border-[#0e9346] hover:bg-[#0e9346] hover:text-white"
-                          }`}
-                        >
-                          <img
-                            className="w-[25px] h-7"
-                            alt={option.label}
-                            src={option.icon}
-                          />
-                          <span className="[font-family:'Inter',Helvetica] font-medium text-[25px]">
-                            {option.value}
-                          </span>
-                        </Button>
-                      ))}
+                    <div className="grid grid-cols-2 gap-4 mb-8">
+                      <button
+                        onClick={() => {
+                          setSelectedAmount(100);
+                          setCustomAmount("");
+                        }}
+                        className={`h-16 rounded-[10px] border-2 transition-all duration-200 flex items-center justify-center gap-3 ${
+                          selectedAmount === 100 && customAmount === ""
+                            ? "border-[#00834d] bg-[#00834d] text-white"
+                            : "border-[#00834d] text-[#00834d] hover:bg-[#00834d]/10"
+                        }`}
+                      >
+                        <img
+                          className="w-6 h-6"
+                          alt="100 ريال"
+                          src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-26-3.png"
+                        />
+                        <span className="[font-family:'Inter',Helvetica] font-semibold text-xl">
+                          100
+                        </span>
+                      </button>
+
+                      <button
+                        onClick={() => {
+                          setSelectedAmount(500);
+                          setCustomAmount("");
+                        }}
+                        className={`h-16 rounded-[10px] border-2 transition-all duration-200 flex items-center justify-center gap-3 ${
+                          selectedAmount === 500 && customAmount === ""
+                            ? "border-[#00834d] bg-[#00834d] text-white"
+                            : "border-[#00834d] text-[#00834d] hover:bg-[#00834d]/10"
+                        }`}
+                      >
+                        <img
+                          className="w-6 h-6"
+                          alt="500 ريال"
+                          src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-26-4.png"
+                        />
+                        <span className="[font-family:'Inter',Helvetica] font-semibold text-xl">
+                          500
+                        </span>
+                      </button>
                     </div>
 
-                    <div className="w-full h-[5px] bg-[#e0e0e0] my-[37px]" />
+                    <div className="grid grid-cols-3 gap-4 mb-8">
+                      <button
+                        onClick={() => {
+                          setSelectedAmount(1000);
+                          setCustomAmount("");
+                        }}
+                        className={`h-16 rounded-[10px] border-2 transition-all duration-200 flex items-center justify-center gap-3 ${
+                          selectedAmount === 1000 && customAmount === ""
+                            ? "border-[#00834d] bg-[#00834d] text-white"
+                            : "border-[#00834d] text-[#00834d] hover:bg-[#00834d]/10"
+                        }`}
+                      >
+                        <img
+                          className="w-6 h-6"
+                          alt="1000 ريال"
+                          src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-26-7.png"
+                        />
+                        <span className="[font-family:'Inter',Helvetica] font-semibold text-xl">
+                          1000
+                        </span>
+                      </button>
 
-                    <div className="space-y-[22px]">
-                      <p className="text-right [font-family:'Inter',Helvetica] font-normal text-[#494848] text-3xl [direction:rtl]">
+                      <button
+                        onClick={() => {
+                          setSelectedAmount(1500);
+                          setCustomAmount("");
+                        }}
+                        className={`h-16 rounded-[10px] border-2 transition-all duration-200 flex items-center justify-center gap-3 ${
+                          selectedAmount === 1500 && customAmount === ""
+                            ? "border-[#00834d] bg-[#00834d] text-white"
+                            : "border-[#00834d] text-[#00834d] hover:bg-[#00834d]/10"
+                        }`}
+                      >
+                        <img
+                          className="w-6 h-6"
+                          alt="1500 ريال"
+                          src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-26-6.png"
+                        />
+                        <span className="[font-family:'Inter',Helvetica] font-semibold text-xl">
+                          1500
+                        </span>
+                      </button>
+
+                      <button
+                        onClick={() => {
+                          setSelectedAmount(2000);
+                          setCustomAmount("");
+                        }}
+                        className={`h-16 rounded-[10px] border-2 transition-all duration-200 flex items-center justify-center gap-3 ${
+                          selectedAmount === 2000 && customAmount === ""
+                            ? "border-[#00834d] bg-[#00834d] text-white"
+                            : "border-[#00834d] text-[#00834d] hover:bg-[#00834d]/10"
+                        }`}
+                      >
+                        <img
+                          className="w-6 h-6"
+                          alt="2000 ريال"
+                          src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-26-5.png"
+                        />
+                        <span className="[font-family:'Inter',Helvetica] font-semibold text-xl">
+                          2000
+                        </span>
+                      </button>
+                    </div>
+
+                    <div className="space-y-4">
+                      <p className="text-right [font-family:'Inter',Helvetica] font-normal text-[#494848] text-xl [direction:rtl]">
                         حدد مبلغا اخر :
                       </p>
 
@@ -205,32 +291,18 @@ export const OneTimeTransaction = (): JSX.Element => {
                           max="2000"
                           value={customAmount}
                           onChange={(e) => handleCustomAmountChange(e.target.value)}
-                          className="h-[62px] rounded-[15px] border-2 border-[#619b88] text-right text-[25px] [font-family:'Inter',Helvetica] font-medium pr-[60px]"
-                          placeholder="أدخل المبلغ"
+                          className="h-14 rounded-[10px] border-2 border-[#00834d] text-right text-lg [font-family:'Inter',Helvetica] font-medium pr-16 pl-4"
+                          placeholder="ر.س"
                           disabled={isSaving}
                         />
-                        <img
-                          className="absolute left-[25px] top-1/2 -translate-y-1/2 w-[30px] h-[33.6px]"
-                          alt="Currency icon"
-                          src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-26-8.png"
-                        />
+                        <span className="absolute right-4 top-1/2 -translate-y-1/2 [font-family:'Inter',Helvetica] font-normal text-[#676767] text-lg">
+                          ر.س
+                        </span>
                       </div>
                     </div>
                   </>
                 )}
 
-                {selectedAmount && (
-                  <div className="bg-[#f7f7f7] rounded-[15px] p-6 mt-8">
-                    <div className="flex items-center justify-between">
-                      <span className="[font-family:'Inter',Helvetica] font-bold text-[#00834d] text-3xl">
-                        {selectedAmount.toFixed(2)}
-                      </span>
-                      <span className="[font-family:'Inter',Helvetica] font-bold text-[#494848] text-2xl [direction:rtl]">
-                        المبلغ المختار
-                      </span>
-                    </div>
-                  </div>
-                )}
 
                 {error && (
                   <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mt-4 [direction:rtl]">
@@ -243,11 +315,11 @@ export const OneTimeTransaction = (): JSX.Element => {
             </CardContent>
           </Card>
 
-          <div className="flex flex-col gap-5 mt-[159px]">
+          <div className="flex flex-col gap-4 mt-8">
             <Button
               onClick={handleNext}
               disabled={!selectedAmount || isSaving}
-              className="w-full h-20 bg-[#0d8f44] hover:bg-[#0b7a39] text-white rounded-[5px] [font-family:'Inter',Helvetica] font-semibold text-[32px] [direction:rtl] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full h-16 bg-[#00834d] hover:bg-[#006b3f] text-white rounded-[5px] [font-family:'Inter',Helvetica] font-semibold text-2xl [direction:rtl] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSaving ? "جاري الحفظ..." : "التالي"}
             </Button>
@@ -256,7 +328,7 @@ export const OneTimeTransaction = (): JSX.Element => {
               variant="outline"
               asChild
               disabled={isSaving}
-              className="w-full h-20 border-[5px] border-[#0d8f44] text-[#0d8f44] hover:bg-[#0d8f44] hover:text-white rounded-[5px] [font-family:'Inter',Helvetica] font-semibold text-[32px] [direction:rtl] transition-colors"
+              className="w-full h-16 border-[3px] border-[#00834d] text-[#00834d] hover:bg-gray-50 rounded-[5px] [font-family:'Inter',Helvetica] font-semibold text-2xl [direction:rtl] transition-colors"
             >
               <Link to="/slecet-detainess">السابق</Link>
             </Button>

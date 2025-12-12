@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
+import { Header } from "../../components/shared/Header";
 
 const serviceCards = [
   {
     icon: "https://c.animaapp.com/mj1mbbgnyvQ8i0/img/material-symbols-light-wallet.svg",
     title: "الإيداع المالي",
     delay: "0ms",
-    link: "/select-service",
+    link: "/hello",
   },
   {
     icon: "https://c.animaapp.com/mj1mbbgnyvQ8i0/img/fluent-receipt-search-20-regular.svg",
@@ -44,69 +45,7 @@ export const Sections = (): JSX.Element => {
       className="bg-white w-full min-w-[844px] min-h-screen relative flex flex-col"
       data-model-id="159:517"
     >
-      <header className="w-full px-10 py-6 translate-y-[-1rem] animate-fade-in opacity-0">
-        <nav className="flex items-center justify-between max-w-[760px] mx-auto">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="h-auto p-0"
-            aria-label="Menu"
-          >
-            <div className="flex flex-col gap-4 w-[54px]">
-              <div className="w-full h-[7px] bg-[#00834d] rounded-[10px]" />
-              <div className="w-full h-[7px] bg-[#00834d] rounded-[10px]" />
-              <div className="w-full h-[7px] bg-[#00834d] rounded-[10px]" />
-            </div>
-          </Button>
-
-          <div className="flex items-center gap-4">
-            <Button
-              variant="outline"
-              className="h-auto w-32 rounded-[10px] border-[#676767] bg-white p-0 relative overflow-visible"
-            >
-              <div className="flex flex-col items-center py-4 px-6 gap-2">
-                <div className="flex items-center gap-2 relative">
-                  <img
-                    className="w-[34px] h-[38px]"
-                    alt="Group"
-                    src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-5-4.png"
-                  />
-                  <span className="[font-family:'Inter',Helvetica] font-normal text-[#00834d] text-2xl">
-                    E
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 relative">
-                  <img
-                    className="w-[34px] h-[37px]"
-                    alt="Group"
-                    src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-4-4.png"
-                  />
-                  <span className="[font-family:'Jaldi',Helvetica] font-normal text-[#00834d] text-2xl [direction:rtl]">
-                    ع
-                  </span>
-                </div>
-                <span className="[font-family:'Inter',Helvetica] font-bold text-[#676767] text-2xl">
-                  English
-                </span>
-              </div>
-            </Button>
-
-            <img
-              className="w-[124px] h-[83px] object-cover"
-              alt="Saudi vision"
-              src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/saudi-vision-2030-logo-svg-1-8.png"
-            />
-
-            <div className="w-px h-[90px] bg-gray-300" />
-
-            <img
-              className="w-[59px] h-[86px]"
-              alt="Government logo"
-              src="https://c.animaapp.com/mj1mbbgnyvQ8i0/img/group-6.png"
-            />
-          </div>
-        </nav>
-      </header>
+      <Header />
 
       <main className="flex-1 flex flex-col items-center px-10 pb-10 bg-[#d2d2d24f]">
         <nav

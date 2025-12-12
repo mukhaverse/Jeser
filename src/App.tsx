@@ -4,22 +4,19 @@ import { Hello } from "./screens/Hello";
 import { HomePage } from "./screens/HomePage";
 import { LogInPage } from "./screens/LogInPage";
 import { OneTimeTransaction } from "./screens/OneTimeTransaction";
-import { PayPage } from "./screens/PayPage";
+import { OneTimeTransactionPart2 } from "./screens/OneTimeTransactionPart2";
 import { Sections } from "./screens/Sections";
 import { SelectService } from "./screens/SelectService";
 import { ServicesPage } from "./screens/ServicesPage";
 import { SlecetDetainess } from "./screens/SlecetDetainess";
 import { SummaryPage } from "./screens/SummaryPage";
+import { SummaryPagePart2 } from "./screens/SummaryPagePart2";
 import { Confirmation } from "./screens/Confirmation";
-import { ChooseMonths } from "./screens/ChooseMonths";
-import { DateSelection } from "./screens/DateSelection";
-import { OverlayCalendar } from "./screens/OverlayCalendar";
 import { StateScreen } from "./screens/StateScreen";
 import { History } from "./screens/History";
 import { PayPage1 } from "./screens/PayPage1";
 import { PayPageApple } from "./screens/PayPageApple";
 import { MonthsAdvance } from "./screens/MonthsAdvance";
-import { DateAmountSelection } from "./screens/DateAmountSelection";
 import { DateOptionsManagement } from "./screens/DateOptionsManagement";
 
 const router = createBrowserRouter([
@@ -52,16 +49,20 @@ const router = createBrowserRouter([
     element: <OneTimeTransaction />,
   },
   {
+    path: "/one-time-transaction-part2",
+    element: <OneTimeTransactionPart2 />,
+  },
+  {
     path: "/select-service",
     element: <SelectService />,
   },
   {
-    path: "/pay-page",
-    element: <PayPage />,
-  },
-  {
     path: "/summary-page",
     element: <SummaryPage />,
+  },
+  {
+    path: "/summary-page-part2",
+    element: <SummaryPagePart2 />,
   },
   {
     path: "/home-page",
@@ -74,18 +75,6 @@ const router = createBrowserRouter([
   {
     path: "/months-advance",
     element: <MonthsAdvance />,
-  },
-  {
-    path: "/choose-months",
-    element: <ChooseMonths />,
-  },
-  {
-    path: "/date-selection",
-    element: <DateSelection />,
-  },
-  {
-    path: "/overlay-calendar",
-    element: <OverlayCalendar />,
   },
   {
     path: "/state",
@@ -102,10 +91,6 @@ const router = createBrowserRouter([
   {
     path: "/pay-page-apple",
     element: <PayPageApple />,
-  },
-  {
-    path: "/date-amount-selection",
-    element: <DateAmountSelection />,
   },
   {
     path: "/date-options-management",
